@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Ulang Tahun!</title>
+    <title>The Best Things In LIfe Are Yet To Come!!</title>
     <style>
         /* --- CSS Dasar dan Tata Letak --- */
         body {
@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #6495ED;
+            background-color: #f0f0f0;
             overflow: hidden; /* Mencegah scroll saat transisi */
         }
 
@@ -24,7 +24,7 @@
             position: relative;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            background-color: Cornflower Blue;
+            background-color: white;
             border-radius: 15px;
         }
 
@@ -148,21 +148,21 @@
                 <div class="flame"></div>
             </div>
         </div>
-        <h1 id="text-s1">🎉 SELAMAT ULANG TAHUN! 🎉</h1>
-        <p>Ayo kita mulai perayaan ini!</p>
+        <h1 id="text-s1">🎉 ALL THE BEST ON YOUR SPECIAL DAY! 🎉</h1>
+        <p>let's get started!</p>
         <button class="next-button" onclick="nextSlide()">Lanjut</button>
     </div>
 
     <div class="slide" id="slide2">
-        <h1 id="text-s2">Siapa Nama Anda?</h1>
-        <p>Masukkan nama Anda agar ucapan ini lebih spesial:</p>
+        <h1 id="text-s2">Who Is This Guest Star?</h1>
+        <p>Masukkan namamu agar ucapan ini lebih spesial:</p>
         <input type="text" id="userName" placeholder="Ketik nama di sini">
         <button class="next-button" onclick="prepareAndGoToSlide3()">Lanjut</button>
     </div>
 
     <div class="slide" id="slide3">
-        <h1 id="text-s3">Selamat Ulang Tahun, <span id="displayName">Teman</span>!</h1>
-        <p id="longMessage">Semoga hari ini penuh tawa, kebahagiaan, dan semua keinginan terbaik menjadi kenyataan. Terima kasih telah menjadi orang yang luar biasa! Nikmati hari spesialmu!</p>
+        <h1 id="text-s3">Have A Nice Day, <span id="displayName">Teman</span>!</h1>
+        <p id="longMessage">I don't say "Happy Birthday", But i say, semoga seluruh doa yang kamu langit kan semoga menjadi kenyataan semua cita-cita dan harapan yang selama ini kamu usahakan bisa segera terkabul, semoga seluruh kebahagiaan di dunia ini berpusat pada dirimu, dan semoga kamu senantiasa sehat serta diberi umur panjang agar dapat menikmati seluruh keindahan dunia, and last one, i say thank you so much senang bisa mengenalmu..!</p>
         <button class="next-button" onclick="nextSlide()">Lanjut</button>
     </div>
 
@@ -174,7 +174,7 @@
 
     <div class="slide" id="slide5">
         <h1 id="text-s5">🎊 Penutup Spesial 🎊</h1>
-        <p id="customText2">Semoga kebahagiaan selalu menyertai langkahmu. Salam hangat dari kami!</p>
+        <p id="customText2">Semoga kebahagiaan selalu menyertai langkahmu. Salam hangat for someone!, semoga kamu suka dengan websitenya ya:3</p>
     </div>
 
 </div>
@@ -213,16 +213,16 @@
 
     function customizeText() {
         // SLIDE 1
-        document.getElementById('text-s1').textContent = "🎈 ALL THE BEST ON YOUR SPECIAL DAY! 🎈"; 
+        document.getElementById('text-s1').textContent = "🎈 AWAL DARI PERAYAAN! 🎈"; 
         
         // SLIDE 2
-        document.getElementById('text-s2').textContent = "Who Is The Star Today?";
+        document.getElementById('text-s2').textContent = "Siapa Bintang Hari Ini?";
 
         // SLIDE 3 (Hanya bagian ucapan panjang)
-        document.getElementById('longMessage').textContent = "I dont say happy birthday, But i say, Semoga seluruh doa yang kamu langit kan semoga menjadi kenyataan semua cita-cita dan harapan yang selama ini kamu usahakan bisa segera terkabul, semoga seluruh kebahagiaan di dunia ini berpusat pada dirimu, dan semoga kamu senantiasa sehat serta diberi umur panjang agar dapat menikmati seluruh keindahan dunia, and last one, i say thank you so much senang bisa mengenalmu... Teruslah bersinar terang!";
+        document.getElementById('longMessage').textContent = "Selamat ulang tahun! Hari ini adalah hari istimewa Anda, dan saya berharap semua impian dan aspirasi Anda terpenuhi. Teruslah bersinar terang!";
         
         // SLIDE 4
-        document.getElementById('text-s4').textContent = "🌟 Reminder For You 🌟";
+        document.getElementById('text-s4').textContent = "🌟 Pesan Dari Lubuk Hati Terdalam 🌟";
         document.getElementById('customText1').textContent = "Ingatlah bahwa setiap tahun baru membawa kesempatan baru. Jadikan tahun ini yang terbaik dari semuanya. Kamu pantas mendapatkannya!";
 
         // SLIDE 5
