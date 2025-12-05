@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        /* --- CSS Dasar dan Tata Letak --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #6495ED;
+            overflow: hidden; /* Mencegah scroll saat transisi */
+        }
+
+        .slide-container {
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: Cornflower Blue;
+            border-radius: 15px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* --- Gaya Elemen Slide --- */
+        h1 {
+            color: #ff69b4; /* Pink */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .next-button {
+            padding: 10px 20px;
+            background-color: #4682b4; /* Steel Blue */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #5a9bdc;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* --- Animasi Kue (Slide 1) --- */
+        .cake {
+            width: 150px;
+            height: 100px;
+            background-color: #f7a77e; /* Warna kue */
+            border-radius: 10px 10px 50px 50px;
+            position: relative;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .candle {
+            width: 8px;
+            height: 30px;
+            background-color: #ffd700; /* Emas */
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px 2px 0 0;
+        }
+
+        .flame {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 15px solid #ff4500; /* Oranye Merah */
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; transform: translateX(-50%) scale(1); }
+            100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+
+        /* --- Gaya Slide Khusus (Untuk Kustomisasi) --- */
+        #slide4 h2 {
+            color: #1e90ff; /* Biru terang */
+        }
+        #slide5 p {
+            font-style: italic;
+            color: #8a2be2; /* Biru ungu */
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div class="slide active" id="slide1">
+        <div class="cake">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+        <h1 id="text-s1">🎉 SELAMAT ULANG TAHUN! 🎉</h1>
+        <p>Ayo kita mulai perayaan ini!</p>
+        <button class="next-button" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <div class="slide" id="slide2">
+        <h1 id="text-s2">Siapa Nama Anda?</h1>
+        <p>Masukkan nama Anda agar ucapan ini lebih spesial:</p>
+        <input type="text" id="userName" placeholder="Ketik nama di sini">
+        <button class="next-button" onclick="prepareAndGoToSlide3()">Lanjut</button>
+    </div>
+
+    <div class="slide" id="slide3">
+        <h1 id="text-s3">Selamat Ulang Tahun, <span id="displayName">Teman</span>!</h1>
+        <p id="longMessage">Semoga hari ini penuh tawa, kebahagiaan, dan semua keinginan terbaik menjadi kenyataan. Terima kasih telah menjadi orang yang luar biasa! Nikmati hari spesialmu!</p>
+        <button class="next-button" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <div class="slide" id="slide4">
+        <h2 id="text-s4">Momen Indah Untuk Dikenang</h2>
+        <p id="customText1">Di hari yang spesial ini, mari kita kenang semua petualangan seru dan pelajaran berharga yang telah kita lalui bersama. Ini adalah babak baru yang menanti!</p>
+        <button class="next-button" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <div class="slide" id="slide5">
+        <h1 id="text-s5">🎊 Penutup Spesial 🎊</h1>
+        <p id="customText2">Semoga kebahagiaan selalu menyertai langkahmu. Salam hangat dari kami!</p>
+    </div>
+
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    // Fungsi untuk menampilkan slide berikutnya
+    function nextSlide() {
+        if (currentSlide < totalSlides) {
+            document.getElementById(slide${currentSlide}).classList.remove('active');
+            currentSlide++;
+            document.getElementById(slide${currentSlide}).classList.add('active');
+        }
+    }
+
+    // Fungsi khusus untuk Slide 2 ke Slide 3
+    function prepareAndGoToSlide3() {
+        const nameInput = document.getElementById('userName').value.trim();
+        const userName = nameInput === "" ? "Teman Spesial" : nameInput;
+
+        // Memasukkan nama ke Slide 3
+        document.getElementById('displayName').textContent = userName;
+        
+        nextSlide();
+    }
+
+    /* ========================================================
+    PERINTAH MENGUBAH TEKS (CUSTOMIZATION INSTRUCTIONS)
+    ========================================================
+
+    Anda dapat mengubah teks di setiap slide dengan memodifikasi 
+    'textContent' dari ID elemen di bawah ini.
+    */
+
+    function customizeText() {
+        // SLIDE 1
+        document.getElementById('text-s1').textContent = "🎈 ALL THE BEST ON YOUR SPECIAL DAY! 🎈"; 
+        
+        // SLIDE 2
+        document.getElementById('text-s2').textContent = "Who Is The Star Today?";
+
+        // SLIDE 3 (Hanya bagian ucapan panjang)
+        document.getElementById('longMessage').textContent = "I dont say happy birthday, But i say, Semoga seluruh doa yang kamu langit kan semoga menjadi kenyataan semua cita-cita dan harapan yang selama ini kamu usahakan bisa segera terkabul, semoga seluruh kebahagiaan di dunia ini berpusat pada dirimu, dan semoga kamu senantiasa sehat serta diberi umur panjang agar dapat menikmati seluruh keindahan dunia, and last one, i say thank you so much senang bisa mengenalmu... Teruslah bersinar terang!";
+        
+        // SLIDE 4
+        document.getElementById('text-s4').textContent = "🌟 Reminder For You 🌟";
+        document.getElementById('customText1').textContent = "Ingatlah bahwa setiap tahun baru membawa kesempatan baru. Jadikan tahun ini yang terbaik dari semuanya. Kamu pantas mendapatkannya!";
+
+        // SLIDE 5
+        document.getElementById('text-s5').textContent = "Sampai Jumpa di Perayaan Berikutnya!";
+        document.getElementById('customText2').textContent = "Semoga hari-harimu selalu dihiasi dengan kebahagiaan tak terhingga. Sampai jumpa lagi! 👋";
+    }
+
+    // Panggil fungsi ini jika Anda ingin menerapkan perubahan teks kustom
+    // Jika tidak, biarkan baris ini dikomentari.
+    // customizeText(); 
+</script>
+
+</body>
+</html>
